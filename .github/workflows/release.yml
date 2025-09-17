@@ -8,12 +8,8 @@ on:
 
 jobs:
   build:
-    strategy:
-      matrix:
-        GPIO_ONLY: [false, true]
     uses: ./.github/workflows/build.yml
     with:
-      GPIO_ONLY: ${{ matrix.GPIO_ONLY }}
       LOG_ON_GP01: false
       BOOTSEL_BUTTON: false
 
@@ -33,11 +29,8 @@ jobs:
         run: |
           ls -l artifacts/
           mv \
-            artifacts/picoports__GPIO_ONLY=false*.uf2 \
+            artifacts/picoports*.uf2 \
             artifacts/picoports_${{github.ref_name}}.uf2
-          mv \
-            artifacts/picoports__GPIO_ONLY=true*.uf2 \
-            artifacts/picoports_${{github.ref_name}}_GPIO-only.uf2
           ls -l artifacts/
 
       - name: Create Release
@@ -45,10 +38,6 @@ jobs:
         uses: softprops/action-gh-release@v2
         with:
           body: |
-            There are two variants:
-
-            - `picoports_${{github.ref_name}}.uf2` all features as described in the Readme
-            - `picoports_${{github.ref_name}}_GPIO-only.uf2` features only GPIOs
-          files: |
+            See: [Usage](https://github.com/sevenlab-de/picoports/blob/${{github.ref_name}}/README.md#usage)
+          files:
             artifacts/picoports_${{github.ref_name}}.uf2
-            artifacts/picoports_${{github.ref_name}}_GPIO-only.uf2

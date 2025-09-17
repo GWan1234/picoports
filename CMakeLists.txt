@@ -31,14 +31,7 @@ target_include_directories(picoports PUBLIC
   ${CMAKE_CURRENT_SOURCE_DIR}/src
 )
 
-target_link_libraries(picoports PUBLIC hardware_adc)
-
-option(GPIO_ONLY "Disable interfaces, use all pins as GPIOs")
-if(GPIO_ONLY)
-target_compile_definitions(picoports PUBLIC PP_GPIO_ONLY=1)
-else()
-target_link_libraries(picoports PUBLIC hardware_i2c)
-endif()
+target_link_libraries(picoports PUBLIC hardware_adc hardware_i2c)
 
 family_configure_device_example(picoports noos)
 

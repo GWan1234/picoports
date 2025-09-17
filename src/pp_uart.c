@@ -17,16 +17,13 @@
 
 void pp_uart_init(void)
 {
-#ifndef PP_GPIO_ONLY
 	gpio_set_function(PP_UART_PIN_TX, GPIO_FUNC_UART);
 	gpio_set_function(PP_UART_PIN_RX, GPIO_FUNC_UART);
 	uart_init(PP_UART_INST, PP_UART_DEFAULT_SPEED);
-#endif
 }
 
 void pp_uart_task(void)
 {
-#ifndef PP_GPIO_ONLY
 	char buf[CFG_TUD_CDC_EP_BUFSIZE];
 
 	uint32_t i;
@@ -40,10 +37,7 @@ void pp_uart_task(void)
 		TU_LOG3("Forwarded %" PRIu32 " bytes to host\r\n", written);
 		(void)written;
 	}
-#endif
 }
-
-#ifndef PP_GPIO_ONLY
 
 void tud_cdc_line_state_cb(uint8_t itf, bool dtr, bool rts)
 {
@@ -122,5 +116,3 @@ void tud_cdc_rx_cb(uint8_t itf)
 		TU_LOG3("Forwarded %" PRIu32 " bytes to UART\r\n", count);
 	}
 }
-
-#endif

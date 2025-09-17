@@ -11,11 +11,9 @@
 #include "dln2.h"
 
 static const uint8_t adc_gpios[] = {
-#ifndef PP_GPIO_ONLY
 	26, 27, 28,
-#endif
 	29 // 1/3 voltage divider on VSYS
-	// Channel 5 is the internal temperature sensor.
+	// Channel 5 is the internal temperature sensor (no GPIO).
 };
 
 #define NUM_PP_ADC_CHANNELS (TU_ARRAY_SIZE(adc_gpios) + 1)
