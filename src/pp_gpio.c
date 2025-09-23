@@ -18,20 +18,9 @@
 
 static uint8_t gpio_pins[] = {
 #ifndef PP_LOG_ON_GP01
-	0,  1, // Debug log
+	0, 1, // Debug log
 #endif
-	2,  3,	4,  5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15,
-#ifdef PP_GPIO_ONLY
-	16, 17, // I2C
-#endif
-	18, 19,
-#ifdef PP_GPIO_ONLY
-	20, 21, // UART
-#endif
-	22,
-#ifdef PP_GPIO_ONLY
-	26, 27, 28, // ADC
-#endif
+	2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 18, 19, 22,
 	25 // Pico LED
 };
 
