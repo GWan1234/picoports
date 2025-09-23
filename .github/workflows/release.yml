@@ -42,5 +42,6 @@ jobs:
 
             - [Installation](https://github.com/sevenlab-de/picoports/blob/${{github.ref_name}}/README.md#installation)
             - [Usage](https://github.com/sevenlab-de/picoports/blob/${{github.ref_name}}/README.md#usage)
+            - [Pinout](https://github.com/sevenlab-de/picoports/blob/${{github.ref_name}}/README.md#pinout)
           files:
             artifacts/picoports_${{github.ref_name}}.uf2
