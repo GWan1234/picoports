@@ -38,6 +38,9 @@ jobs:
         uses: softprops/action-gh-release@v2
         with:
           body: |
-            See: [Usage](https://github.com/sevenlab-de/picoports/blob/${{github.ref_name}}/README.md#usage)
+            See:
+
+            - [Installation](https://github.com/sevenlab-de/picoports/blob/${{github.ref_name}}/README.md#installation)
+            - [Usage](https://github.com/sevenlab-de/picoports/blob/${{github.ref_name}}/README.md#usage)
           files:
             artifacts/picoports_${{github.ref_name}}.uf2
