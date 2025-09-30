@@ -1,6 +1,6 @@
 # PicoPorts
 
-A USB-to-GPIO/ADC/I2C/UART interface based on the Raspberry Pi Pico 1.
+A USB-to-GPIO/ADC/I2C/UART interface based on the Raspberry Pi Pico.
 
 The goal of this project is to be as easy as possible to set up and use. This is achieved by
 
