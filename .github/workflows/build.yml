@@ -3,19 +3,23 @@ name: Build
 on:
   workflow_call:
     inputs:
+      BOARD:
+        type: string
       LOG_ON_GP01:
         type: boolean
       BOOTSEL_BUTTON:
         type: boolean
   workflow_dispatch:
     inputs:
+      BOARD:
+        type: string
       LOG_ON_GP01:
         type: boolean
       BOOTSEL_BUTTON:
         type: boolean
 
 env:
-  FW_NAME: picoports__LOG_ON_GP01=${{inputs.LOG_ON_GP01}}__BOOTSEL_BUTTON=${{inputs.BOOTSEL_BUTTON}}
+  FW_NAME: picoports__BOARD=${{ inputs.BOARD }}__LOG_ON_GP01=${{ inputs.LOG_ON_GP01 }}__BOOTSEL_BUTTON=${{ inputs.BOOTSEL_BUTTON }}
 
 jobs:
   build:
@@ -36,7 +40,7 @@ jobs:
 
     - name: Build
       run: |
-        cmake -B build -DLOG_ON_GP01=${{inputs.LOG_ON_GP01}} -DBOOTSEL_BUTTON=${{inputs.BOOTSEL_BUTTON}}
+        cmake -B build -DBOARD=${{ inputs.BOARD }} -DLOG_ON_GP01=${{ inputs.LOG_ON_GP01 }} -DBOOTSEL_BUTTON=${{ inputs.BOOTSEL_BUTTON }}
         make -C build -j $(nproc)
         mv -n build/picoports.uf2 build/${{ env.FW_NAME }}.uf2 || true
 
