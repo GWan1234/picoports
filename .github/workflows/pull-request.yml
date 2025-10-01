@@ -9,9 +9,11 @@ jobs:
     if: github.event.pull_request.draft == false
     strategy:
       matrix:
+        BOARD: ["raspberry_pi_pico", "raspberry_pi_pico2"]
         LOG_ON_GP01: [false, true]
         BOOTSEL_BUTTON: [false, true]
     uses: ./.github/workflows/build.yml
     with:
+      BOARD: ${{ matrix.BOARD }}
       LOG_ON_GP01: ${{ matrix.LOG_ON_GP01 }}
       BOOTSEL_BUTTON: ${{ matrix.BOOTSEL_BUTTON }}

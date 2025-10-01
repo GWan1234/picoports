@@ -27,5 +27,3 @@
   - buffers so we can use iio-tools
 - SPI
   - TODO
-- Add support for Pico 2
-- Enable readout of the button state via a GPIO
