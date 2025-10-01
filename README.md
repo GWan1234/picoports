@@ -233,12 +233,15 @@ git -C pico-sdk submodule update --init -- lib/tinyusb
 ### Build
 
 ```shell
-cmake -B build [-DLOG_ON_GP01=yes] [-DBOOTSEL_BUTTON=yes]
+cmake -B build -DBOARD=raspberry_pi_pico -DLOG_ON_GP01=no -DBOOTSEL_BUTTON=no
 make -C build
 # quick install (if your system uses udisks2 auto-mounting):
 cp build/picoports.uf2 /media/$USER/RPI-RP2/
 ```
 
+- `BOARD`: Choose between `raspberry_pi_pico` = Build for Raspberry Pi Pico (1) and
+  `raspberry_pi_pico2` = Build for Raspberry Pi Pico 2. Firmware images are not compatible between
+  Pico (1) and Pico 2.
 - `LOG_ON_GP01`: Enable debug logging on GP0/GP1, TX/RX resp. (GPIO lines will start at GP2)
 - `BOOTSEL_BUTTON`: Pressing the button resets the pico into BOOTSEL mode (GPIO line for button will
   not be available)

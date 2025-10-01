@@ -4,7 +4,9 @@
 #
 cmake_minimum_required(VERSION 3.17)
 
-set(FAMILY "rp2040")
+if(NOT DEFINED BOARD)
+set(BOARD "raspberry_pi_pico")
+endif()
 set(LOG 1)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 set(PICO_SDK_PATH ${CMAKE_CURRENT_LIST_DIR}/pico-sdk)
