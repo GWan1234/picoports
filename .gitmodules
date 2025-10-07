@@ -2,3 +2,6 @@
 	path = pico-sdk
 	url = https://github.com/raspberrypi/pico-sdk.git
 	ignore = dirty
+[submodule "debugprobe"]
+	path = debugprobe
+	url = https://github.com/raspberrypi/debugprobe.git

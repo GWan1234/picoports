@@ -3,8 +3,11 @@
 ```shell
 git clone --no-recurse-submodules https://github.com/sevenlab-de/picoports.git
 cd picoports
-git submodule update --init -- pico-sdk
+git submodule update --init -- pico-sdk debugprobe
 git -C pico-sdk submodule update --init -- lib/tinyusb
+git -C debugprobe submodule update --init -- freertos
+# Only required for Pico 2 build:
+git -C debugprobe/freertos submodule update --init -- portable/ThirdParty/Community-Supported-Ports
 ```
 
 ## Build

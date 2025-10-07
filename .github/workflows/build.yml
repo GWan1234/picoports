@@ -35,8 +35,12 @@ jobs:
 
     - name: Selectively clone submodules
       run: |
-        git submodule update --init -- pico-sdk
+        git submodule update --init -- pico-sdk debugprobe
         git -C pico-sdk submodule update --init -- lib/tinyusb
+        git -C debugprobe submodule update --init -- freertos
+        if [ ${{ inputs.PICO_BOARD }} == pico2 ]; then
+          git -C debugprobe/freertos submodule update --init -- portable/ThirdParty/Community-Supported-Ports
+        fi
 
     - name: Build
       run: |
