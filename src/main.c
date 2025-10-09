@@ -4,6 +4,9 @@
  */
 #include "tusb.h"
 
+#include "FreeRTOS.h"
+#include "task.h"
+
 #include "bsp/board_api.h"
 
 #include "byte_ops.h"
@@ -12,32 +15,30 @@
 #include "pp_ctrl.h"
 #include "pp_gpio.h"
 #include "pp_i2c.h"
-#include "pp_uart.h"
 
 static void send_delayed_messages(void);
 
-int main(void)
+void picoports_init(void)
 {
-	board_init();
-
-	tusb_rhport_init_t dev_init = { .role = TUSB_ROLE_DEVICE,
-					.speed = TUSB_SPEED_AUTO };
-	tusb_init(BOARD_TUD_RHPORT, &dev_init);
-
-	if (board_init_after_tusb) {
-		board_init_after_tusb();
-	}
-
 	pp_gpio_init();
 	pp_adc_init();
 	pp_i2c_init();
-	pp_uart_init();
+}
 
-	while (1) {
-		tud_task();
+void vApplicationIdleHook(void)
+{
+	for (;;) {
+		// This code was not written for preemption, so we're disabling
+		// the scheduler while it is running. We're splitting it up to
+		// have a preemption point in between.
+
+		vTaskSuspendAll();
 		pp_gpio_task();
-		pp_uart_task();
+		xTaskResumeAll();
+
+		vTaskSuspendAll();
 		send_delayed_messages();
+		xTaskResumeAll();
 	}
 }
 

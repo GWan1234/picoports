@@ -4,4 +4,4 @@
 	ignore = dirty
 [submodule "debugprobe"]
 	path = debugprobe
-	url = https://github.com/raspberrypi/debugprobe.git
+	url = https://github.com/sevenlab-de/debugprobe.git

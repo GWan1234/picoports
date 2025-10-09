@@ -11,13 +11,15 @@
 #error Only rp2040 is supported!
 #endif
 
-#define BOARD_TUD_RHPORT 0
+#define CFG_TUSB_RHPORT0_MODE OPT_MODE_DEVICE
 #define CFG_TUD_ENABLED 1
 
-#define CFG_TUD_VENDOR 1
+#define CFG_TUD_VENDOR 2
 
-#define CFG_TUD_VENDOR_RX_BUFSIZE DLN2_RX_BUF_SIZE
-#define CFG_TUD_VENDOR_TX_BUFSIZE DLN2_RX_BUF_SIZE
+// We cannot set different buffer sizes per vendor interface. Debugprobe uses
+// 8192, dln2 uses 512, upper bounding to 8192.
+#define CFG_TUD_VENDOR_RX_BUFSIZE 8192
+#define CFG_TUD_VENDOR_TX_BUFSIZE 8192
 #define CFG_TUD_VENDOR_EPSIZE 64
 
 #define CFG_TUD_CDC 1

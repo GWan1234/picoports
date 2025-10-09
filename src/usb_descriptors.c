@@ -15,18 +15,22 @@ enum {
 	STRID_SERIALNUMBER,
 	STRID_DLN_IFNAME,
 	STRID_CDC_IFNAME,
+	STRID_DAP_IFNAME,
 	STRIDS,
 };
 
 #define MAX_CHARS 32
 
+// Some fields are scanned by OpenOCD to auto-detect CMSIS-DAP interfaces
+// without relying on the vendor and product IDs.
 char const *string_desc_arr[] = {
 	[STRID_LANGID] = (const char[]){ 0x09, 0x04 }, // 0x0409 = English
 	[STRID_MANUFACTURER] = "PicoPorts",
-	[STRID_PRODUCT] = "GPIO Expander",
+	[STRID_PRODUCT] = "GPIO Expander (CMSIS-DAP)", // OpenOCD scanned
 	[STRID_SERIALNUMBER] = NULL, // read from pico hw
 	[STRID_DLN_IFNAME] = "DLN2",
 	[STRID_CDC_IFNAME] = "CDC",
+	[STRID_DAP_IFNAME] = "CMSIS-DAP v2 Interface", // OpenOCD scanned
 };
 
 static uint16_t _desc_str[MAX_CHARS + 1]; // +1 for header: length and type
@@ -101,24 +105,30 @@ const uint8_t *tud_descriptor_device_cb(void)
 #define TU_EDPT_ADDR(num, dir)                                                 \
 	(uint8_t)(num | (dir == TUSB_DIR_IN ? TUSB_DIR_IN_MASK : 0))
 
-// CDC occupies two interface numbers (ID 1 and ID 2)
-#define NUM_IFS 3
+// Note: CDC occupies two interface numbers
+#define NUM_IFS 4
 #define CONFIG_TOTAL_LEN                                                       \
-	(TUD_CONFIG_DESC_LEN + TUD_VENDOR_DESC_LEN + TUD_CDC_DESC_LEN)
+	(TUD_CONFIG_DESC_LEN + TUD_VENDOR_DESC_LEN + TUD_VENDOR_DESC_LEN +     \
+	 TUD_CDC_DESC_LEN)
 
 #define EPNUM_VENDOR_OUT TU_EDPT_ADDR(0x01, TUSB_DIR_OUT)
 #define EPNUM_VENDOR_IN TU_EDPT_ADDR(0x02, TUSB_DIR_IN)
 
-#define EPNUM_CDC_NOTIF TU_EDPT_ADDR(0x03, TUSB_DIR_IN)
-#define EPNUM_CDC_OUT TU_EDPT_ADDR(0x04, TUSB_DIR_OUT)
-#define EPNUM_CDC_IN TU_EDPT_ADDR(0x05, TUSB_DIR_IN)
+#define EPNUM_DAP_OUT TU_EDPT_ADDR(0x03, TUSB_DIR_OUT)
+#define EPNUM_DAP_IN TU_EDPT_ADDR(0x04, TUSB_DIR_IN)
+
+#define EPNUM_CDC_NOTIF TU_EDPT_ADDR(0x05, TUSB_DIR_IN)
+#define EPNUM_CDC_OUT TU_EDPT_ADDR(0x06, TUSB_DIR_OUT)
+#define EPNUM_CDC_IN TU_EDPT_ADDR(0x07, TUSB_DIR_IN)
 
 const uint8_t desc_configuration[] = {
 	TUD_CONFIG_DESCRIPTOR(1, NUM_IFS, STRID_LANGID, CONFIG_TOTAL_LEN, 0x00,
 			      100),
 	TUD_VENDOR_DESCRIPTOR(0, STRID_DLN_IFNAME, EPNUM_VENDOR_OUT,
 			      EPNUM_VENDOR_IN, CFG_TUD_VENDOR_EPSIZE),
-	TUD_CDC_DESCRIPTOR(1, STRID_CDC_IFNAME, EPNUM_CDC_NOTIF, 8,
+	TUD_VENDOR_DESCRIPTOR(1, STRID_DAP_IFNAME, EPNUM_DAP_OUT, EPNUM_DAP_IN,
+			      CFG_TUD_VENDOR_EPSIZE),
+	TUD_CDC_DESCRIPTOR(2, STRID_CDC_IFNAME, EPNUM_CDC_NOTIF, 8,
 			   EPNUM_CDC_OUT, EPNUM_CDC_IN, CFG_TUD_CDC_EP_BUFSIZE),
 };
 
