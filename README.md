@@ -13,7 +13,6 @@ The goal of this project is to be as easy as possible to set up and use. This is
 ![Pinout](./docs/img/Pinout.png)
 
 Original image from [official Raspberry Pi documentation](https://datasheets.raspberrypi.com/pico/Pico-R3-A4-Pinout.pdf).
-Includes data from <https://pico.pinout.xyz>. Modified to include the Linux GPIO line numbers.
 
 ## Usage
 

@@ -22,7 +22,7 @@
     <color-profile
        name="sRGB"
        xlink:href="file:///usr/share/color/icc/colord/sRGB.icc"
-       id="color-profile6904" />
+       id="color-profile3808" />
     <clipPath
        clipPathUnits="userSpaceOnUse"
        id="clipPath26">
@@ -76,15 +76,15 @@
      inkscape:pagecheckerboard="true"
      inkscape:deskcolor="#d1d1d1"
      showgrid="false"
-     inkscape:zoom="1.1622997"
-     inkscape:cx="289.94243"
-     inkscape:cy="180.67629"
+     inkscape:zoom="1.64374"
+     inkscape:cx="296.27557"
+     inkscape:cy="193.46125"
      inkscape:window-width="1920"
      inkscape:window-height="1020"
      inkscape:window-x="1920"
-     inkscape:window-y="736"
+     inkscape:window-y="720"
      inkscape:window-maximized="1"
-     inkscape:current-layer="layer1"
+     inkscape:current-layer="g10"
      showborder="false"
      borderlayer="true">
     <inkscape:page
@@ -5132,11 +5132,11 @@
       </g>
     </g>
     <path
-       d="m 28.15,462.36568 h -8.963 v 8.965 h 8.963 z"
+       d="m 28.15,447.527 h -8.963 v 8.965 h 8.963 z"
        style="fill:#e83131;fill-opacity:1;fill-rule:nonzero;stroke:none"
        id="path8016" />
     <path
-       d="m 28.15,449.493 h -8.963 v 8.965 h 8.963 z"
+       d="m 28.15,434.65432 h -8.963 v 8.965 h 8.963 z"
        style="fill:#363a44;fill-opacity:1;fill-rule:nonzero;stroke:none"
        id="path8018" />
     <text
@@ -5145,14 +5145,14 @@
        style="font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.228px;font-family:'YCNBHV +Roboto-Regular';-inkscape-font-specification:Roboto-Regular;writing-mode:lr-tb;fill:#363a44;fill-opacity:1;fill-rule:nonzero;stroke:none"
        id="text8024"
        x="37.18721"
-       y="-464.29749"><tspan
+       y="-449.4588"><tspan
          x="37.18721 41.701111 45.821037 51.249283 55.080116"
-         y="-464.29749"
+         y="-449.4588"
          sodipodi:role="line"
          id="tspan8020"
          style="fill:#e83131;fill-opacity:1">Power</tspan><tspan
          x="37.18721 42.109467 44.486038 48.606003 52.588623 56.578491"
-         y="-451.26544"
+         y="-436.42676"
          sodipodi:role="line"
          id="tspan8022">Ground</tspan></text>
     <path
@@ -5183,7 +5183,22 @@
          sodipodi:role="line"
          id="tspan8098" /></text>
     <path
-       d="m 28.15,475.79472 h -8.963 v 8.963 h 8.963 z"
+       d="m 19.227943,483.86894 h 8.974 v -8.974 h -8.974 z"
+       style="fill:#ffbd58;fill-opacity:1;fill-rule:nonzero;stroke:none"
+       id="path8028-2-3" />
+    <text
+       xml:space="preserve"
+       transform="scale(1,-1)"
+       style="font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.228px;font-family:'YCNBHV +Roboto-Regular';-inkscape-font-specification:Roboto-Regular;writing-mode:lr-tb;fill:#ffbd58;fill-opacity:1;fill-rule:nonzero;stroke:none"
+       id="text8100-6"
+       x="37.242504"
+       y="-476.64667"><tspan
+         x="37.242504"
+         y="-476.64667"
+         sodipodi:role="line"
+         id="tspan8098-5">SWD</tspan></text>
+    <path
+       d="m 28.15,460.95604 h -8.963 v 8.963 h 8.963 z"
        style="fill:#f6adad;fill-opacity:1;fill-rule:nonzero;stroke:none"
        id="path8102" />
     <text
@@ -5203,9 +5218,9 @@
        style="font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.228px;font-family:'YCNBHV +Roboto-Regular';-inkscape-font-specification:Roboto-Regular;writing-mode:lr-tb;fill:#427f21;fill-opacity:1;fill-rule:nonzero;stroke:none"
        id="text8112-7"
        x="37.183414"
-       y="-477.56296"><tspan
+       y="-462.72427"><tspan
          x="37.183414 41.469608 44.888462 48.618122 50.981663 54.812496 61.144222 62.936779 67.642197 71.762169 75.752014 78.115562 80.484184 84.604156"
-         y="-477.56296"
+         y="-462.72427"
          sodipodi:role="line"
          id="tspan8106-2"
          style="fill:#f6adad;fill-opacity:1">System Control</tspan><tspan
@@ -5213,14 +5228,14 @@
          id="tspan8108-6"
          style="fill:#ea8326;fill-opacity:1"
          x="37.183414"
-         y="-468.52795" /><tspan
+         y="-453.68927" /><tspan
          sodipodi:role="line"
          id="tspan8110-4"
          x="37.183414"
-         y="-459.49295" /></text>
+         y="-444.65427" /></text>
     <path
-       d="M 124.376,556.72 H 11.957 V 440.77928 H 124.376 Z M 122.665,442.33489 H 13.671 v 112.82859 h 108.994 z"
-       style="fill:#363a44;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.95351"
+       d="M 124.376,556.72 H 11.957 V 426.40953 H 124.376 Z M 122.665,428.15794 H 13.671 v 126.81262 h 108.994 z"
+       style="fill:#363a44;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.01087"
        id="path8120" />
     <path
        d="m 19.187,549.34425 h 8.974 v -8.974 h -8.974 z"
@@ -5348,11 +5363,11 @@
        id="path3014-3" />
     <path
        d="m 408.48903,360.34182 h 38.426 v -8.97399 h -38.426 z"
-       style="fill:#d83a94;fill-opacity:1;fill-rule:nonzero;stroke:none"
+       style="fill:#ffbd58;fill-opacity:1;fill-rule:nonzero;stroke:none"
        id="path1450-4-7-7-9" />
     <path
        d="m 408.48903,347.33383 h 38.426 v -8.974 h -38.426 z"
-       style="fill:#d83a94;fill-opacity:1;fill-rule:nonzero;stroke:none"
+       style="fill:#ffbd58;fill-opacity:1;fill-rule:nonzero;stroke:none"
        id="path1478-2-9-9-3" />
     <path
        d="m 405.96716,408.24675 h 2.561 v -0.903 h -2.561 z"
@@ -5633,7 +5648,7 @@
          id="tspan5143-1-6-4-6"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.35853px;font-family:'Liberation Sans';-inkscape-font-specification:'Liberation Sans, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.613211"
          x="413.78055"
-         y="-353.14655">LINE 17</tspan></text>
+         y="-353.14655">SWDIO</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.35853px;font-family:'Liberation Sans';-inkscape-font-specification:'Liberation Sans, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffff;stroke-width:0.613211"
@@ -5645,7 +5660,7 @@
          id="tspan5143-0-6-2-7"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.35853px;font-family:'Liberation Sans';-inkscape-font-specification:'Liberation Sans, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.613211"
          x="413.75201"
-         y="-340.08557">LINE 16</tspan></text>
+         y="-340.08557">SWCLK</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.35853px;font-family:'Liberation Sans';-inkscape-font-specification:'Liberation Sans, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffff;stroke-width:0.613211"
@@ -5657,7 +5672,7 @@
          id="tspan5143-1-6-4-6-1"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.35853px;font-family:'Liberation Sans';-inkscape-font-specification:'Liberation Sans, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.613211"
          x="414.37006"
-         y="-405.27695">LINE 18</tspan></text>
+         y="-405.27695">LINE 16</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.35853px;font-family:'Liberation Sans';-inkscape-font-specification:'Liberation Sans, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffff;stroke-width:0.613211"
@@ -5669,7 +5684,7 @@
          id="tspan5143-1-6-4-6-3"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.35853px;font-family:'Liberation Sans';-inkscape-font-specification:'Liberation Sans, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.613211"
          x="328.54755"
-         y="-585.04785">LINE 19</tspan></text>
+         y="-585.04785">LINE 17</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:14.5305px;font-family:'Liberation Sans';-inkscape-font-specification:'Liberation Sans, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffff;stroke-width:1.5008"
@@ -5725,7 +5740,7 @@
          id="tspan5143-1-6-4-6-3-9"
          style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.35853px;font-family:'Liberation Sans';-inkscape-font-specification:'Liberation Sans, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.613211"
          x="328.5166"
-         y="-573.64954">LINE 20</tspan></text>
+         y="-573.64954">LINE 18</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.35853px;font-family:'Liberation Sans';-inkscape-font-specification:'Liberation Sans, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffff;stroke-width:0.613211"
