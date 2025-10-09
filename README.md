@@ -1,6 +1,6 @@
 # PicoPorts
 
-A USB-to-GPIO/ADC/I2C/UART interface based on the Raspberry Pi Pico.
+A USB-to-GPIO/ADC/I2C/UART/SWD interface based on the Raspberry Pi Pico.
 
 The goal of this project is to be as easy as possible to set up and use. This is achieved by
 
@@ -20,6 +20,7 @@ Original image from [official Raspberry Pi documentation](https://datasheets.ras
 - **[Usage of ADC](./docs/usage_adc.md)**
 - **[Usage of I2C](./docs/usage_i2c.md)**
 - **[Usage of UART](./docs/usage_uart.md)**
+- **[Usage of SWD](./docs/usage_swd.md)**
 
 ## Installation
 
@@ -32,6 +33,11 @@ Original image from [official Raspberry Pi documentation](https://datasheets.ras
 ## Development
 
 See [Development Setup](./docs/dev_setup.md)
+
+## Acknowledgements
+
+Many thanks to the contributors who upstreamed the `dln2` driver and to the contributors of
+[debugprobe](https://github.com/raspberrypi/debugprobe/)!
 
 ## Licensing
 

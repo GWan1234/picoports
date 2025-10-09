@@ -33,10 +33,12 @@ is called `dln2` (`gpio-dln2`, `dln2-adc`, `i2c-dln2`) and was written for the D
 adapter. PicoPorts just implements the other side of the interface which the driver provides. It's
 mainly a glue layer from this kernel interface to the Pico's SDK interface.
 
-Since the `dln2` kernel driver does not support UART, PicoPorts also adds a standard USB CDC ACM
-interface and then also glues that to the SDK interface.
-
 Many thanks to the contributors who upstreamed this driver!
+
+Additionally, PicoPorts incorporates the [debugprobe](https://github.com/raspberrypi/debugprobe/)
+project. Luckily OpenOCD does not use the vendor and product ID of the device, but scans the product
+name and interface name for `"CMSIS-DAP"`, so we can keep using the vendor and product ID required
+for detection by the `dln2` driver.
 
 ### What about SPI?
 
