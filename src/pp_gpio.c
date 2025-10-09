@@ -285,23 +285,10 @@ static bool has_button_event(uint16_t *pin, uint8_t *val)
 	return false;
 }
 
-void check_button(void)
-{
-#ifdef PP_BTN_BOOTSEL
-	if (board_button_read() == 1) {
-		while (board_button_read() == 1)
-			;
-		rom_reset_usb_boot_extra(-1, 0, 0);
-	}
-#endif
-}
-
 void pp_gpio_task(void)
 {
 	uint16_t pin;
 	uint8_t val;
-
-	check_button();
 
 	if (!has_button_event(&pin, &val) && !has_pin_event(&pin, &val))
 		return;
