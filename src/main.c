@@ -41,20 +41,6 @@ int main(void)
 	}
 }
 
-bool tud_vendor_control_xfer_cb(uint8_t rhport, uint8_t stage,
-				const tusb_control_request_t *request)
-{
-	(void)rhport;
-	(void)stage;
-	(void)request;
-
-	/* Is this called at some point? */
-	TU_LOG1("==> tud_vendor_control_xfer_cb %u %u: ", rhport, stage);
-	TU_LOG1_BUF((const uint8_t *)request, sizeof(request));
-
-	return false; /* stall */
-}
-
 TU_ATTR_UNUSED static const char *handle2str(uint16_t handle)
 {
 	// clang-format off
