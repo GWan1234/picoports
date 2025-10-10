@@ -10,10 +10,10 @@ jobs:
   build:
     strategy:
       matrix:
-        BOARD: ["raspberry_pi_pico", "raspberry_pi_pico2"]
+        PICO_BOARD: ["pico", "pico2"]
     uses: ./.github/workflows/build.yml
     with:
-      BOARD: ${{ matrix.BOARD }}
+      PICO_BOARD: ${{ matrix.PICO_BOARD }}
       LOG_ON_GP01: false
       BOOTSEL_BUTTON: false
 
@@ -33,10 +33,10 @@ jobs:
         run: |
           ls -l artifacts/
           mv \
-            artifacts/picoports__BOARD=raspberry_pi_pico__*.uf2 \
+            artifacts/picoports__PICO_BOARD=pico__*.uf2 \
             artifacts/picoports_pico_${{ github.ref_name }}.uf2
           mv \
-            artifacts/picoports__BOARD=raspberry_pi_pico2__*.uf2 \
+            artifacts/picoports__PICO_BOARD=pico2__*.uf2 \
             artifacts/picoports_pico2_${{ github.ref_name }}.uf2
           ls -l artifacts/
 
