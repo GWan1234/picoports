@@ -140,7 +140,8 @@ static bool handle_rx_data(const uint8_t *buf_in, uint16_t buf_in_size)
 
 	const uint8_t *data_in = &buf_in[MSG_HDR_SZ];
 	uint16_t data_in_len = buf_in_size - MSG_HDR_SZ;
-	uint8_t buf_out[CFG_TUD_VENDOR_TX_BUFSIZE - MSG_HDR_SZ];
+	// It's a big buffer, declaring it static to avoid blowing up the stack.
+	static uint8_t buf_out[CFG_TUD_VENDOR_TX_BUFSIZE - MSG_HDR_SZ];
 	// We're going to insert the response code before the data_out.
 	uint8_t *data_out = &buf_out[2];
 	uint16_t data_out_len = TU_ARRAY_SIZE(buf_out) - 2;
