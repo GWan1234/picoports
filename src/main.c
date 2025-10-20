@@ -58,7 +58,7 @@ TU_ATTR_UNUSED static const char *handle2str(uint16_t handle)
 }
 
 #define MAX_NUM_BUF_MSGS 16
-static uint8_t message_buffer[MAX_NUM_BUF_MSGS * CFG_TUD_VENDOR_TX_BUFSIZE];
+static uint8_t message_buffer[MAX_NUM_BUF_MSGS * DLN2_RX_BUF_SIZE];
 static size_t r_id;
 static size_t w_id;
 
@@ -68,7 +68,7 @@ static void send_delayed_messages(void)
 		return;
 
 	uint32_t bytes_avail = tud_vendor_write_available();
-	if (bytes_avail != CFG_TUD_VENDOR_TX_BUFSIZE)
+	if (bytes_avail < DLN2_RX_BUF_SIZE)
 		return;
 
 	uint8_t *message = &message_buffer[r_id];
@@ -83,7 +83,7 @@ static void send_delayed_messages(void)
 	(void)bytes_flushed;
 	TU_LOG3_BUF(message, size);
 
-	r_id += CFG_TUD_VENDOR_TX_BUFSIZE;
+	r_id += DLN2_RX_BUF_SIZE;
 	if (r_id >= sizeof(message_buffer))
 		r_id = 0;
 }
@@ -104,7 +104,7 @@ static void send_delayed_messages(void)
 void send_message_delayed(uint16_t cmd, uint16_t echo, enum dln2_handle handle,
 			  uint8_t *data, uint16_t data_len)
 {
-	TU_ASSERT(data_len <= CFG_TUD_VENDOR_TX_BUFSIZE - MSG_HDR_SZ, );
+	TU_ASSERT(data_len <= DLN2_RX_BUF_SIZE - MSG_HDR_SZ, );
 
 	uint8_t *buf = &message_buffer[w_id];
 
@@ -118,7 +118,7 @@ void send_message_delayed(uint16_t cmd, uint16_t echo, enum dln2_handle handle,
 	TU_LOG3("main: Request to send %u byte from %s\r\n", data_len,
 		handle2str(handle));
 
-	w_id += CFG_TUD_VENDOR_TX_BUFSIZE;
+	w_id += DLN2_RX_BUF_SIZE;
 	if (w_id >= sizeof(message_buffer))
 		w_id = 0;
 }
@@ -133,6 +133,7 @@ static bool handle_rx_data(const uint8_t *buf_in, uint16_t buf_in_size)
 	const uint16_t handle = u16_from_buf_le(&buf_in[6]);
 
 	TU_VERIFY(size == buf_in_size);
+	TU_VERIFY(size <= DLN2_RX_BUF_SIZE);
 
 	TU_LOG3("main: Request to handle %u (%s): command %u (size=%u, echo=%u)\r\n",
 		handle, handle2str(handle), id, size, echo);
@@ -141,7 +142,7 @@ static bool handle_rx_data(const uint8_t *buf_in, uint16_t buf_in_size)
 	const uint8_t *data_in = &buf_in[MSG_HDR_SZ];
 	uint16_t data_in_len = buf_in_size - MSG_HDR_SZ;
 	// It's a big buffer, declaring it static to avoid blowing up the stack.
-	static uint8_t buf_out[CFG_TUD_VENDOR_TX_BUFSIZE - MSG_HDR_SZ];
+	static uint8_t buf_out[DLN2_RX_BUF_SIZE - MSG_HDR_SZ];
 	// We're going to insert the response code before the data_out.
 	uint8_t *data_out = &buf_out[2];
 	uint16_t data_out_len = TU_ARRAY_SIZE(buf_out) - 2;
