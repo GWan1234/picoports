@@ -37,22 +37,6 @@ Special case: Switch on Pico LED (connected to GP25; using gpiochip device `gpio
 gpioset gpiochip1 19=1
 ```
 
-Special case: Read button state (can only be read; using gpiochip device `gpiochip1`)
-
-```bash
-gpioget gpiochip1 20
-```
-
-Note: The button is not connected via GPIOs and can only be read. Trying to set it will return the
-errno: `EREMOTEIO 121 Remote I/O error`
-
-Combined example: Display button state on the LED (using gpiochip device `gpiochip1`)
-
-```bash
-while true; do gpiomon --num-events=1 gpiochip1 20; gpioset gpiochip1 19=$(gpioget gpiochip1 20); done
-# Stop with ctrl+z (suspend process) and "kill %%" (kill last suspended process)
-```
-
 ## Using multiple devices
 
 When using multiple PicoPorts devices, it's not easy to determine the exact gpiochip device using

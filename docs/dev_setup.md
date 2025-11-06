@@ -23,8 +23,9 @@ cp build/picoports.uf2 /media/$USER/RPI-RP2/
   `pico2` = Build for Raspberry Pi Pico 2. Firmware images are not compatible between
   Pico (1) and Pico 2. CMake cache needs to be cleaned before changing the board.
 - `LOG_ON_GP01`: Enable debug logging on GP0/GP1, TX/RX resp. (GPIO lines will start at GP2)
-- `BOOTSEL_BUTTON`: Pressing the button resets the pico into BOOTSEL mode (GPIO line for button will
-  not be available)
+- `BOOTSEL_BUTTON`: Pressing the button resets the pico into BOOTSEL mode. Enabling this impacts
+  flash accesses, which interferes with the SWD capabilities. The host software may occasionally
+  show warnings and errors when this is enabled.
 
 ## Theory of operation
 
