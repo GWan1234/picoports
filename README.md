@@ -10,7 +10,7 @@ The goal of this project is to be as easy as possible to set up and use. This is
 
 ## Pinout
 
-![Pinout](./docs/img/Pinout.png)
+![Pinout](./docs/img/Pinout+Key.png)
 
 Original image from [official Raspberry Pi documentation](https://datasheets.raspberrypi.com/pico/Pico-R3-A4-Pinout.pdf).
 
