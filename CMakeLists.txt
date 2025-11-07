@@ -7,12 +7,19 @@ cmake_minimum_required(VERSION 3.17)
 set(LOG 1)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 set(PICO_SDK_PATH ${CMAKE_CURRENT_LIST_DIR}/pico-sdk)
+set(DEBUGPROBE_PATH ${CMAKE_CURRENT_LIST_DIR}/debugprobe)
+set(FREERTOS_KERNEL_PATH ${DEBUGPROBE_PATH}/freertos)
 
-include(${PICO_SDK_PATH}/external/pico_sdk_import.cmake)
+include(${DEBUGPROBE_PATH}/pico_sdk_import.cmake)
+include(${DEBUGPROBE_PATH}/FreeRTOS_Kernel_import.cmake)
 
 project(picoports C CXX ASM)
 
 pico_sdk_init()
+
+set(DEBUG_ON_PICO ON CACHE BOOL "Always compiling for Pico" FORCE)
+
+include(${CMAKE_CURRENT_LIST_DIR}/debugprobe.cmake)
 
 add_executable(picoports)
 
@@ -22,12 +29,13 @@ target_sources(picoports PUBLIC
   ${CMAKE_CURRENT_SOURCE_DIR}/src/pp_ctrl.c
   ${CMAKE_CURRENT_SOURCE_DIR}/src/pp_gpio.c
   ${CMAKE_CURRENT_SOURCE_DIR}/src/pp_i2c.c
-  ${CMAKE_CURRENT_SOURCE_DIR}/src/pp_uart.c
   ${CMAKE_CURRENT_SOURCE_DIR}/src/usb_descriptors.c
 )
 
 target_include_directories(picoports PUBLIC
   ${CMAKE_CURRENT_SOURCE_DIR}/src
+  # Required for FreeRTOSConfig.h
+  ${DEBUGPROBE_PATH}/src/
 )
 
 target_link_libraries(picoports PUBLIC
@@ -36,6 +44,9 @@ target_link_libraries(picoports PUBLIC
   hardware_i2c
   tinyusb_device
   tinyusb_board
+  FreeRTOS-Kernel
+  FreeRTOS-Kernel-Heap1
+  debugprobe
 )
 
 option(LOG_ON_GP01 "Enable debug logging on GP0/GP1 (TX/RX resp.)")

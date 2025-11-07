@@ -3,8 +3,11 @@
 ```shell
 git clone --no-recurse-submodules https://github.com/sevenlab-de/picoports.git
 cd picoports
-git submodule update --init -- pico-sdk
+git submodule update --init -- pico-sdk debugprobe
 git -C pico-sdk submodule update --init -- lib/tinyusb
+git -C debugprobe submodule update --init -- freertos
+# Only required for Pico 2 build:
+git -C debugprobe/freertos submodule update --init -- portable/ThirdParty/Community-Supported-Ports
 ```
 
 ## Build
@@ -20,8 +23,9 @@ cp build/picoports.uf2 /media/$USER/RPI-RP2/
   `pico2` = Build for Raspberry Pi Pico 2. Firmware images are not compatible between
   Pico (1) and Pico 2. CMake cache needs to be cleaned before changing the board.
 - `LOG_ON_GP01`: Enable debug logging on GP0/GP1, TX/RX resp. (GPIO lines will start at GP2)
-- `BOOTSEL_BUTTON`: Pressing the button resets the pico into BOOTSEL mode (GPIO line for button will
-  not be available)
+- `BOOTSEL_BUTTON`: Pressing the button resets the pico into BOOTSEL mode. Enabling this impacts
+  flash accesses, which interferes with the SWD capabilities. The host software may occasionally
+  show warnings and errors when this is enabled.
 
 ## Theory of operation
 
@@ -30,10 +34,12 @@ is called `dln2` (`gpio-dln2`, `dln2-adc`, `i2c-dln2`) and was written for the D
 adapter. PicoPorts just implements the other side of the interface which the driver provides. It's
 mainly a glue layer from this kernel interface to the Pico's SDK interface.
 
-Since the `dln2` kernel driver does not support UART, PicoPorts also adds a standard USB CDC ACM
-interface and then also glues that to the SDK interface.
-
 Many thanks to the contributors who upstreamed this driver!
+
+Additionally, PicoPorts incorporates the [debugprobe](https://github.com/raspberrypi/debugprobe/)
+project. Luckily OpenOCD does not use the vendor and product ID of the device, but scans the product
+name and interface name for `"CMSIS-DAP"`, so we can keep using the vendor and product ID required
+for detection by the `dln2` driver.
 
 ### What about SPI?
 

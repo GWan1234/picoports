@@ -3,7 +3,7 @@ name: Build
 on:
   workflow_call:
     inputs:
-      BOARD:
+      PICO_BOARD:
         type: string
       LOG_ON_GP01:
         type: boolean
@@ -11,7 +11,7 @@ on:
         type: boolean
   workflow_dispatch:
     inputs:
-      BOARD:
+      PICO_BOARD:
         type: string
       LOG_ON_GP01:
         type: boolean
@@ -19,7 +19,7 @@ on:
         type: boolean
 
 env:
-  FW_NAME: picoports__BOARD=${{ inputs.BOARD }}__LOG_ON_GP01=${{ inputs.LOG_ON_GP01 }}__BOOTSEL_BUTTON=${{ inputs.BOOTSEL_BUTTON }}
+  FW_NAME: picoports__PICO_BOARD=${{ inputs.PICO_BOARD }}__LOG_ON_GP01=${{ inputs.LOG_ON_GP01 }}__BOOTSEL_BUTTON=${{ inputs.BOOTSEL_BUTTON }}
 
 jobs:
   build:
@@ -35,12 +35,16 @@ jobs:
 
     - name: Selectively clone submodules
       run: |
-        git submodule update --init -- pico-sdk
+        git submodule update --init -- pico-sdk debugprobe
         git -C pico-sdk submodule update --init -- lib/tinyusb
+        git -C debugprobe submodule update --init -- freertos
+        if [ ${{ inputs.PICO_BOARD }} == pico2 ]; then
+          git -C debugprobe/freertos submodule update --init -- portable/ThirdParty/Community-Supported-Ports
+        fi
 
     - name: Build
       run: |
-        cmake -B build -DBOARD=${{ inputs.BOARD }} -DLOG_ON_GP01=${{ inputs.LOG_ON_GP01 }} -DBOOTSEL_BUTTON=${{ inputs.BOOTSEL_BUTTON }}
+        cmake -B build -DPICO_BOARD=${{ inputs.PICO_BOARD }} -DLOG_ON_GP01=${{ inputs.LOG_ON_GP01 }} -DBOOTSEL_BUTTON=${{ inputs.BOOTSEL_BUTTON }}
         make -C build -j $(nproc)
         mv -n build/picoports.uf2 build/${{ env.FW_NAME }}.uf2 || true
 

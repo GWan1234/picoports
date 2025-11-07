@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   version="1.1"
+   id="svg2"
+   width="185"
+   height="240"
+   viewBox="0 0 185 240"
+   sodipodi:docname="key.inkscape.svg"
+   inkscape:version="1.2.2 (b0a8486541, 2022-12-01)"
+   inkscape:export-filename="Key.png"
+   inkscape:export-xdpi="250"
+   inkscape:export-ydpi="250"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs6">
+    <color-profile
+       name="sRGB"
+       xlink:href="file:///usr/share/color/icc/colord/sRGB.icc"
+       id="color-profile3060" />
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath26">
+      <path
+         d="M 646.328,29.615 H 803.399 V 73.269 H 646.328 Z"
+         id="path24" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath132">
+      <path
+         d="M 174.331,73.268 H 656.908 V 471.549 H 174.331 Z"
+         id="path130" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath3974">
+      <path
+         d="M 174.331,73.268 H 656.908 V 471.549 H 174.331 Z"
+         id="path3972" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath4180">
+      <path
+         d="M 28.583,272.408 H 170.787 V 419.81 H 28.583 Z"
+         id="path4178" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath8036">
+      <path
+         d="M 28.583,272.408 H 170.787 V 419.81 H 28.583 Z"
+         id="path8034" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath8134">
+      <path
+         d="M 28.583,272.408 H 170.787 V 419.81 H 28.583 Z"
+         id="path8132" />
+    </clipPath>
+  </defs>
+  <sodipodi:namedview
+     id="namedview4"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="true"
+     inkscape:deskcolor="#d1d1d1"
+     showgrid="false"
+     inkscape:zoom="2.3245994"
+     inkscape:cx="89.047601"
+     inkscape:cy="132.92613"
+     inkscape:window-width="1920"
+     inkscape:window-height="1048"
+     inkscape:window-x="0"
+     inkscape:window-y="720"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="g10"
+     showborder="false"
+     borderlayer="true">
+    <inkscape:page
+       x="0"
+       y="0"
+       id="page8"
+       width="185"
+       height="240"
+       inkscape:export-filename="Pinout.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300" />
+  </sodipodi:namedview>
+  <g
+     id="g10"
+     inkscape:groupmode="layer"
+     inkscape:label="Page 1"
+     transform="matrix(1.3333333,0,0,-1.3333333,0,793.70133)">
+    <path
+       d="m 28.15,434.65432 h -8.963 v 8.965 h 8.963 z"
+       style="fill:#363a44;fill-opacity:1;fill-rule:nonzero;stroke:none"
+       id="path8018" />
+    <path
+       d="m 28.15,447.527 h -8.963 v 8.965 h 8.963 z"
+       style="fill:#e83131;fill-opacity:1;fill-rule:nonzero;stroke:none"
+       id="path8016" />
+    <text
+       xml:space="preserve"
+       transform="scale(1,-1)"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;writing-mode:lr-tb;fill:#427f21;fill-opacity:1;fill-rule:nonzero;stroke:none"
+       id="text8112-7"
+       x="37.183414"
+       y="-462.72427"><tspan
+         x="37.183414 41.469608 44.888462 48.618122 50.981663 54.812496 61.144222 62.936779 67.642197 71.762169 75.752014 78.115562 80.484184 84.604156"
+         y="-462.72427"
+         sodipodi:role="line"
+         id="tspan8106-2"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#f6adad;fill-opacity:1">System Control</tspan><tspan
+         sodipodi:role="line"
+         id="tspan8108-6"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ea8326;fill-opacity:1"
+         x="37.183414"
+         y="-453.97427" /><tspan
+         sodipodi:role="line"
+         id="tspan8110-4"
+         x="37.183414"
+         y="-445.22427" /></text>
+    <path
+       d="m 28.15,460.95604 h -8.963 v 8.963 h 8.963 z"
+       style="fill:#f6adad;fill-opacity:1;fill-rule:nonzero;stroke:none"
+       id="path8102" />
+    <text
+       xml:space="preserve"
+       transform="scale(1,-1)"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;writing-mode:lr-tb;fill:#ffbd58;fill-opacity:1;fill-rule:nonzero;stroke:none"
+       id="text8100-6"
+       x="37.242504"
+       y="-476.64667"><tspan
+         x="37.242504"
+         y="-476.64667"
+         sodipodi:role="line"
+         id="tspan8098-5">SWD</tspan></text>
+    <path
+       d="m 19.227943,483.86894 h 8.974 v -8.974 h -8.974 z"
+       style="fill:#ffbd58;fill-opacity:1;fill-rule:nonzero;stroke:none"
+       id="path8028-2-3" />
+    <text
+       xml:space="preserve"
+       transform="scale(1,-1)"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;writing-mode:lr-tb;fill:#9d89ce;fill-opacity:1;fill-rule:nonzero;stroke:none"
+       id="text8100"
+       x="37.18721"
+       y="-490.12808"><tspan
+         x="37.18721 41.796494 46.511322 50.681877"
+         y="-490.12808"
+         sodipodi:role="line"
+         id="tspan8094">UART</tspan><tspan
+         x="37.18721"
+         y="-481.37808"
+         sodipodi:role="line"
+         id="tspan8098" /></text>
+    <path
+       d="m 19.17264,497.35041 h 8.974 v -8.974 h -8.974 z"
+       style="fill:#9d89ce;fill-opacity:1;fill-rule:nonzero;stroke:none"
+       id="path8028-2" />
+    <text
+       xml:space="preserve"
+       transform="scale(1,-1)"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;writing-mode:lr-tb;fill:#439ed6;fill-opacity:1;fill-rule:nonzero;stroke:none"
+       id="text8112-3"
+       x="36.942478"
+       y="-503.13556"><tspan
+         sodipodi:role="line"
+         id="tspan8110-6"
+         x="36.942478"
+         y="-503.13556">I2C</tspan></text>
+    <path
+       d="m 49.187,363.33529 h 8.974 v -8.974 h -8.974 z"
+       style="fill:#439ed6;fill-opacity:1;fill-rule:nonzero;stroke:none"
+       id="path8194"
+       transform="translate(-30,147)" />
+    <text
+       xml:space="preserve"
+       transform="scale(1,-1)"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;writing-mode:lr-tb;fill:#427f21;fill-opacity:1;fill-rule:nonzero;stroke:none"
+       id="text8112"
+       x="37.186203"
+       y="-477.26889"><tspan
+         x="37.186203 41.898857 46.640427"
+         y="-516.30737"
+         sodipodi:role="line"
+         id="tspan8110">ADC</tspan></text>
+    <path
+       d="m 28.15,514.53757 h -8.963 v 8.965 h 8.963 z"
+       style="fill:#427f21;fill-opacity:1;fill-rule:nonzero;stroke:none"
+       id="path8026" />
+    <text
+       xml:space="preserve"
+       style="font-size:7.2483px;fill:#000000;stroke-width:0.604025"
+       x="66.997986"
+       y="-382.4436"
+       id="text10953"
+       transform="matrix(1,0,0,-1,-30,147)"><tspan
+         sodipodi:role="line"
+         id="tspan10951"
+         style="fill:#7ac943;fill-opacity:1;stroke-width:0.604025"
+         x="66.997986"
+         y="-382.4436">Pico GPIO Pins</tspan></text>
+    <path
+       d="m 19.187,536.54725 h 8.974 v -8.974 h -8.974 z"
+       style="fill:#7ac943;fill-opacity:1;fill-rule:nonzero;stroke:none"
+       id="path8028" />
+    <text
+       xml:space="preserve"
+       style="font-size:7.2483px;fill:#000000;stroke-width:0.604025"
+       x="66.883499"
+       y="-394.5827"
+       id="text10953-5"
+       transform="matrix(1,0,0,-1,-30,147)"><tspan
+         sodipodi:role="line"
+         id="tspan10951-2"
+         style="fill:#d83a94;fill-opacity:1;stroke-width:0.604025"
+         x="66.883499"
+         y="-394.5827">Linux GPIO Lines</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:7.2483px;fill:#e83131;stroke-width:0.604025"
+       x="36.795952"
+       y="-449.29367"
+       id="text10953-5-9"
+       transform="scale(1,-1)"><tspan
+         sodipodi:role="line"
+         id="tspan10951-2-2"
+         style="fill:#e83131;fill-opacity:1;stroke-width:0.604025"
+         x="36.795952"
+         y="-449.29367">Power</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:7.2483px;fill:#363a44;stroke-width:0.604025"
+       x="35.929813"
+       y="-436.7981"
+       id="text10953-5-2"
+       transform="scale(1,-1)"><tspan
+         sodipodi:role="line"
+         id="tspan10951-2-8"
+         style="fill:#363a44;fill-opacity:1;stroke-width:0.604025"
+         x="35.929813"
+         y="-436.7981">Ground</tspan></text>
+    <path
+       d="m 19.187,549.34425 h 8.974 v -8.974 h -8.974 z"
+       style="fill:#d83a94;fill-opacity:1;fill-rule:nonzero;stroke:none"
+       id="path8122" />
+    <path
+       d="M 124.376,556.72 H 11.957 V 426.40953 H 124.376 Z M 122.665,428.15794 H 13.671 v 126.81262 h 108.994 z"
+       style="fill:#363a44;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1.01087"
+       id="path8120" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:14.5305px;font-family:'Liberation Sans';-inkscape-font-specification:'Liberation Sans, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffff;stroke-width:1.5008"
+       x="12.017549"
+       y="-573.34259"
+       id="text17230"
+       transform="scale(1,-1)"><tspan
+         sodipodi:role="line"
+         id="tspan17228"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:14.5305px;font-family:'Liberation Sans';-inkscape-font-specification:'Liberation Sans, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#000000;fill-opacity:1;stroke-width:1.5008"
+         x="12.017549"
+         y="-573.34259">PicoPorts Pinout</tspan></text>
+  </g>
+</svg>

@@ -1,6 +1,6 @@
 # PicoPorts
 
-A USB-to-GPIO/ADC/I2C/UART interface based on the Raspberry Pi Pico.
+A USB-to-GPIO/ADC/I2C/UART/SWD interface based on the Raspberry Pi Pico.
 
 The goal of this project is to be as easy as possible to set up and use. This is achieved by
 
@@ -10,10 +10,9 @@ The goal of this project is to be as easy as possible to set up and use. This is
 
 ## Pinout
 
-![Pinout](./docs/img/Pinout.png)
+![Pinout](./docs/img/Pinout+Key.png)
 
 Original image from [official Raspberry Pi documentation](https://datasheets.raspberrypi.com/pico/Pico-R3-A4-Pinout.pdf).
-Includes data from <https://pico.pinout.xyz>. Modified to include the Linux GPIO line numbers.
 
 ## Usage
 
@@ -21,6 +20,7 @@ Includes data from <https://pico.pinout.xyz>. Modified to include the Linux GPIO
 - **[Usage of ADC](./docs/usage_adc.md)**
 - **[Usage of I2C](./docs/usage_i2c.md)**
 - **[Usage of UART](./docs/usage_uart.md)**
+- **[Usage of SWD](./docs/usage_swd.md)**
 
 ## Installation
 
@@ -33,6 +33,11 @@ Includes data from <https://pico.pinout.xyz>. Modified to include the Linux GPIO
 ## Development
 
 See [Development Setup](./docs/dev_setup.md)
+
+## Acknowledgements
+
+Many thanks to the contributors who upstreamed the `dln2` driver and to the contributors of
+[debugprobe](https://github.com/raspberrypi/debugprobe/)!
 
 ## Licensing
 
