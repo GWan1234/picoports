@@ -43,24 +43,26 @@ bool pp_adc_handle_request(uint16_t cmd, uint8_t const *data_in,
 			   uint16_t data_in_len, uint8_t *data_out,
 			   uint16_t *data_out_len)
 {
+	TU_VERIFY(data_in_len >= 1);
+
+	uint8_t port = data_in[0];
+	TU_VERIFY(port == 0); // always 0 in kernel driver
+
 	switch (cmd) {
 	case DLN2_ADC_GET_CHANNEL_COUNT:
 		TU_ASSERT(*data_out_len >= 1);
-		TU_VERIFY(data_in_len == 1);
-		TU_VERIFY(data_in[0] == 0);
 		TU_LOG3("ADC: Getting number of channels\r\n");
 		data_out[0] = NUM_PP_ADC_CHANNELS;
 		*data_out_len = 1;
 		break;
 	case DLN2_ADC_SET_RESOLUTION:
-		TU_VERIFY(data_in_len == 2);
-		TU_VERIFY(data_in[0] == 0 && data_in[1] == DLN2_ADC_DATA_BITS);
+		TU_VERIFY(data_in_len >= 2);
+		TU_VERIFY(data_in[1] == DLN2_ADC_DATA_BITS);
 		TU_LOG3("ADC: Setting resolution\r\n");
 		*data_out_len = 0;
 		break;
 	case DLN2_ADC_CHANNEL_ENABLE: {
-		TU_VERIFY(data_in_len == 2);
-		TU_VERIFY(data_in[0] == 0);
+		TU_VERIFY(data_in_len >= 2);
 		uint8_t chan = data_in[1] + ADC_OFFS;
 		TU_LOG3("ADC: Enabling channel %u\r\n", chan);
 		(void)chan;
@@ -68,8 +70,7 @@ bool pp_adc_handle_request(uint16_t cmd, uint8_t const *data_in,
 		break;
 	}
 	case DLN2_ADC_CHANNEL_DISABLE: {
-		TU_VERIFY(data_in_len == 2);
-		TU_VERIFY(data_in[0] == 0);
+		TU_VERIFY(data_in_len >= 2);
 		uint8_t chan = data_in[1] + ADC_OFFS;
 		TU_LOG3("ADC: Disabling channel %u\r\n", chan);
 		(void)chan;
@@ -78,8 +79,6 @@ bool pp_adc_handle_request(uint16_t cmd, uint8_t const *data_in,
 	}
 	case DLN2_ADC_ENABLE: {
 		TU_ASSERT(*data_out_len >= 2);
-		TU_VERIFY(data_in_len == 1);
-		TU_VERIFY(data_in[0] == 0);
 		TU_LOG3("ADC: Enabling\r\n");
 		u16_to_buf_le(&data_out[0], 0); // no conflict
 		*data_out_len = 2;
@@ -87,17 +86,14 @@ bool pp_adc_handle_request(uint16_t cmd, uint8_t const *data_in,
 	}
 	case DLN2_ADC_DISABLE: {
 		TU_ASSERT(*data_out_len >= 2);
-		TU_VERIFY(data_in_len == 1);
-		TU_VERIFY(data_in[0] == 0);
 		TU_LOG3("ADC: Disabling\r\n");
 		u16_to_buf_le(&data_out[0], 0); // no conflict
 		*data_out_len = 2;
 		break;
 	}
 	case DLN2_ADC_CHANNEL_GET_VAL: {
+		TU_VERIFY(data_in_len >= 2);
 		TU_ASSERT(*data_out_len >= 2);
-		TU_VERIFY(data_in_len == 2);
-		TU_VERIFY(data_in[0] == 0);
 		uint8_t chan = data_in[1] + ADC_OFFS;
 		adc_select_input(chan);
 		uint16_t val = adc_read();
