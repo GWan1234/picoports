@@ -23,7 +23,5 @@
     - `DLN2_GPIO_EVENT_LVL_LOW`
     - How to test? Not supported by gpiod tools.
     - I assume we can handle them the same way as edge triggered irqs, so we'll just send a trigger when the value changes to the target value. The only difference being that if the irq event enable is requested and the target value is already present, we should also send a trigger immediately.
-- ADC
-  - buffers so we can use iio-tools
 - SPI
   - TODO

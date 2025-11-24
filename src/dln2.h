@@ -34,6 +34,14 @@
 #define DLN2_ADC_CHANNEL_GET_CFG	DLN2_CMD(0x0D, DLN2_ADC_ID)
 #define DLN2_ADC_CONDITION_MET_EV	DLN2_CMD(0x10, DLN2_ADC_ID)
 
+#define DLN2_ADC_EVENT_NONE		0
+#define DLN2_ADC_EVENT_BELOW		1
+#define DLN2_ADC_EVENT_LEVEL_ABOVE	2
+#define DLN2_ADC_EVENT_OUTSIDE		3
+#define DLN2_ADC_EVENT_INSIDE		4
+#define DLN2_ADC_EVENT_ALWAYS		5
+
+#define DLN2_ADC_MAX_CHANNELS 8
 #define DLN2_ADC_DATA_BITS 10
 
 // --- End of defines from Linux drivers/iio/adc/dln2-adc.c ---
