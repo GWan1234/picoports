@@ -26,7 +26,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Install Arm GNU Toolchain (arm-none-eabi-gcc)
-      uses: carlosperate/arm-none-eabi-gcc-action@v1
+      # Using custom version while the upstream is broken. See:
+      #
+      #   https://github.com/carlosperate/arm-none-eabi-gcc-action/issues/74
+      #
+      # When the issue is resolved, we should change back to:
+      #
+      #   uses: carlosperate/arm-none-eabi-gcc-action@v1
+      uses: sevenlab-de/arm-none-eabi-gcc-action@redir_packaged
       with:
         release: '14.2.Rel1'
 

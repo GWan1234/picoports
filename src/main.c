@@ -37,6 +37,10 @@ void vApplicationIdleHook(void)
 		xTaskResumeAll();
 
 		vTaskSuspendAll();
+		pp_adc_task();
+		xTaskResumeAll();
+
+		vTaskSuspendAll();
 		send_delayed_messages();
 		xTaskResumeAll();
 	}
@@ -137,7 +141,6 @@ static bool handle_rx_data(const uint8_t *buf_in, uint16_t buf_in_size)
 
 	TU_LOG3("main: Request to handle %u (%s): command %u (size=%u, echo=%u)\r\n",
 		handle, handle2str(handle), id, size, echo);
-	(void)echo;
 
 	const uint8_t *data_in = &buf_in[MSG_HDR_SZ];
 	uint16_t data_in_len = buf_in_size - MSG_HDR_SZ;
