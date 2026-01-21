@@ -6,6 +6,7 @@ inkscape Pinout.inkscape.svg --export-area-drawing --export-type=png --export-dp
 convert -size 1589x1052 xc:white \
   \( Key.png -gravity northwest -geometry +35+35 \) -composite \
   \( Pinout.png -gravity east -geometry +25+0 \) -composite \
+  \( -annotate +35+35 "Pins are 3.3 V compatible." -gravity southwest -family "Noto Sans" -pointsize 28 -fill black -style normal \) \
   Pinout+Key.png
 
 convert -size 1144x574 xc:white \
