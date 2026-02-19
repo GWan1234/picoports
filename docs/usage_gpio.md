@@ -39,6 +39,10 @@ gpioset gpiochip1 19=1
 
 ## Using multiple devices
 
+> [!NOTE]
+> The method described below [was merged into Systemd](https://github.com/systemd/systemd/pull/39625)
+> and thus will not be necessary for Systemd v259 and later.
+
 When using multiple PicoPorts devices, it's not easy to determine the exact gpiochip device using
 `gpiodetect`. Instead, we can implement a `udev` rule to assign unique symlinks to the devices based
 on their device ID or their USB bus path. This rule is provided in `60-gpiochip.rules`. You can

@@ -5,8 +5,11 @@ A USB-to-GPIO/ADC/I2C/UART/SWD interface based on the Raspberry Pi Pico.
 The goal of this project is to be as easy as possible to set up and use. This is achieved by
 
 - drag and drop firmware [installation](#installation)
-- no driver installation on the host
+- no driver installation on the host*
 - works with standard Linux tooling
+
+*depends on distribution: Ubuntu: yes, Debian: [not yet](https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=1126062),
+Arch: yes, Fedora: yes, OpenSUSE: yes
 
 ## Pinout
 
